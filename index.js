@@ -1,4 +1,14 @@
+// lib.js
 
+// دالة لاختيار عنصر واحد
+function $(selector) {
+  return document.querySelector(selector);
+}
+
+// دالة لاختيار جميع العناصر المطابقة
+function $all(selector) {
+  return document.querySelectorAll(selector);
+}
 const questions = [
   { key: "topic", label: "🧑‍💻 ماذا تريد أن تتعلم؟" },
   { key: "level", label: "📊 ما هو مستواك الحالي؟" },
@@ -57,6 +67,7 @@ async function nextStep() {
 
 // بدء التشغيل
 showQuestion();
+
 
 
 
