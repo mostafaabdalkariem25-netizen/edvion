@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خطة التعلم الأسبوعية</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+    h2 { text-align: center; margin-bottom: 20px; }
+    h3 { margin-top: 20px; color: #444; }
+    ul { list-style: none; padding: 0; }
+    li {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      background: #f1f1f1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    li.completed {
+      text-decoration: line-through;
+      color: green;
+      background: #e6ffe6;
+    }
+    .btn {
+      margin-left: 10px;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .done-btn { background: #4CAF50; color: white; }
+    .link-btn { background: #2196F3; color: white; text-decoration: none; }
+    .lesson-icon { margin-left: 8px; }
+    .video { border-left: 6px solid #2196F3; }
+    .article { border-left: 6px solid #FF9800; }
+    .practice { border-left: 6px solid #4CAF50; }
+    .progress-bar-container {
+      background: #ddd;
+      border-radius: 20px;
+      height: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4CAF50, #8BC34A);
+      width: 0%;
+      transition: width 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>خطة التعلم الأسبوعية</h2>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </div>
+
+  <script>
+    // خطة تجريبية (dummy) — سيتم استبدالها لاحقًا بالـ AI
+    const dummyPlan = {
+      "weeks": [
+        {
+          "week": 1,
+          "days": {
+            "الاثنين": [
+              { "title": "HTML Basics Video", "type": "video", "completed": false, "url": "https://www.youtube.com" },
+              { "title": "MDN HTML Article", "type": "article", "completed": false, "url": "https://developer.mozilla.org" }
+            ],
+            "الثلاثاء": [
+              { "title": "HTML Forms Project", "type": "practice", "completed": false, "url": "#" }
+            ]
+          }
+        },
+        {
+          "week": 2,
+          "days": {
+            "الاثنين": [
+              { "title": "CSS Basics Video", "type": "video", "completed": false, "url": "https://www.youtube.com" },
+              { "title": "CSS Flexbox Article", "type": "article", "completed": false, "url": "https://developer.mozilla.org" }
+            ],
+            "الثلاثاء": [
+              { "title": "Practice: Style page with CSS", "type": "practice", "completed": false, "url": "#" }
+            ]
+          }
+        }
+      ]
+    };
+
+    // تحميل الخطة من LocalStorage أو استخدام dummy
+    let plan = JSON.parse(localStorage.getItem("studyPlan")) || dummyPlan;
+
+    function savePlan() {
+      localStorage.setItem("studyPlan", JSON.stringify(plan));
+    }
+
+    function updateProgress() {
+      const allLessons = plan.weeks.flatMap(w => Object.values(w.days).flat());
+      const completed = allLessons.filter(l => l.completed).length;
+      const percent = (completed / allLessons.length) * 100;
+      document.getElementById("progress-bar").style.width = percent + "%";
+    }
+
+    function showPlan(plan) {
+      const card = document.querySelector(".card");
+      card.innerHTML = `
+        <h2>خطة التعلم الأسبوعية</h2>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      `;
+      
+      plan.weeks.forEach(w => {
+        const weekDiv = document.createElement("div");
+        weekDiv.innerHTML = `<h3>الأسبوع ${w.week}</h3>`;
+        
+        for (const day in w.days) {
+          const dayDiv = document.createElement("div");
+          dayDiv.innerHTML = `<strong>${day}</strong>:`;
+          const list = document.createElement("ul");
+          
+          w.days[day].forEach(lesson => {
+            const li = document.createElement("li");
+            li.classList.add(lesson.type);
+            if (lesson.completed) li.classList.add("completed");
+
+            // أيقونة حسب النوع
+            const icons = { video: "🎥", article: "📖", practice: "📝" };
+            const icon = document.createElement("span");
+            icon.textContent = icons[lesson.type] || "📚";
+            icon.classList.add("lesson-icon");
+
+            // العنوان
+            const title = document.createElement("span");
+            title.textContent = lesson.title;
+
+            // زر تم
+            const btn = document.createElement("button");
+            btn.textContent = "تم";
+            btn.className = "btn done-btn";
+            btn.onclick = () => {
+              lesson.completed = true;
+              savePlan();
+              showPlan(plan); // إعادة عرض الخطة مع التحديث
+            };
+
+            // زر فتح المصدر
+            const link = document.createElement("a");
+            link.textContent = "افتح";
+            link.href = lesson.url;
+            link.target = "_blank";
+            link.className = "btn link-btn";
+
+            li.appendChild(icon);
+            li.appendChild(title);
+            li.appendChild(btn);
+            li.appendChild(link);
+            list.appendChild(li);
+          });
+
+          dayDiv.appendChild(list);
+          weekDiv.appendChild(dayDiv);
+        }
+        card.appendChild(weekDiv);
+      });
+
+      updateProgress();
+    }
+
+    // تشغيل العرض
+    showPlan(plan);
+  </script>
+</body>
+</html>
