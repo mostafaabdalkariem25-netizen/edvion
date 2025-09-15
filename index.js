@@ -22,7 +22,7 @@ function showQuestion() {
         ${step === questions.length - 1 ? "إنشاء الخطة" : "التالي"}
       </button>
     </div>
-  ;
+  ; // ← دي لازم تقفل بـ backtick مش بعلامة تنصيص
 
   $("#next").onclick = nextStep;
 }
