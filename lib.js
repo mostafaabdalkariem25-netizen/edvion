@@ -9,3 +9,4 @@ function $(selector) {
 function $all(selector) {
   return document.querySelectorAll(selector);
 }
+
