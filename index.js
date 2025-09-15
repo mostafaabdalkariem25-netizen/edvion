@@ -14,14 +14,14 @@ function showQuestion() {
   const app = $("#app");
   const question = questions[step];
 
-  app.appendChild = 
+  app.innerHTML = ` 
     <div class="box">
       <h2>${question.label}</h2>
       <input id="answer" type="text" class="input"/>
       <button id="next" class="btn">
         ${step === questions.length - 1 ? "إنشاء الخطة" : "التالي"}
       </button>
-    </div>
+    </div>`
   ; // ← دي لازم تقفل بـ backtick مش بعلامة تنصيص
 
   $("#next").onclick = nextStep;
@@ -57,4 +57,5 @@ async function nextStep() {
 
 // بدء التشغيل
 showQuestion();
+
 
