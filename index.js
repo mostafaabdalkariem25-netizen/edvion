@@ -14,7 +14,7 @@ function showQuestion() {
   const app = $("#app");
   const question = questions[step];
 
-  app.innerHTML = 
+  app.appendChild = 
     <div class="box">
       <h2>${question.label}</h2>
       <input id="answer" type="text" class="input"/>
@@ -57,3 +57,4 @@ async function nextStep() {
 
 // بدء التشغيل
 showQuestion();
+
