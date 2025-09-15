@@ -1,4 +1,3 @@
-// pages/index.js
 import { useState } from "react";
 import axios from "axios";
 
@@ -25,6 +24,11 @@ export default function Home() {
   };
 
   const nextStep = async () => {
+    if (!answers[questions[step].key].trim()) {
+      alert("يرجى إدخال قيمة قبل المتابعة");
+      return;
+    }
+    
     if (step < questions.length - 1) {
       setStep(step + 1);
     } else {
@@ -33,7 +37,8 @@ export default function Home() {
         const res = await axios.post("/api/generate-plan", { answers });
         setPlan(res.data);
       } catch (err) {
-        console.error(err);
+        console.error("خطأ في إنشاء الخطة:", err);
+        alert("حدث خطأ أثناء إنشاء الخطة");
       }
       setLoading(false);
     }
@@ -50,12 +55,16 @@ export default function Home() {
               <h2 className="text-xl mb-4">{questions[step].label}</h2>
               <input
                 className="w-full border rounded p-2 mb-4"
-                value={answers[questions[step].key]}
+                value={answers[questions[step].key] || ""}
                 onChange={handleChange}
+                onKeyPress={(e) => e.key === "Enter" && nextStep()}
               />
               <button
                 onClick={nextStep}
-                className="px-4 py-2 bg-blue-500 text-white rounded"
+                disabled={loading}
+                className={`px-4 py-2 bg-blue-500 text-white rounded ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
                 {step === questions.length - 1 ? "إنشاء الخطة" : "التالي"}
               </button>
@@ -65,9 +74,9 @@ export default function Home() {
       ) : (
         <div className="p-6 bg-white rounded-xl shadow-md w-full max-w-2xl">
           <h2 className="text-2xl mb-4">📅 خطة التعلم الخاصة بك</h2>
-          <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
-            {JSON.stringify(plan, null, 2)}
-          </pre>
+          <div className="bg-gray-100 p-4 rounded whitespace-pre-wrap">
+            {plan.plan || JSON.stringify(plan, null, 2)}
+          </div>
         </div>
       )}
     </div>
