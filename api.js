@@ -8,18 +8,18 @@ async function generatePlan(answers) {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: {
-        "Authorization": Bearer ${API_KEY},
+        "Authorization":` Bearer ${API_KEY},
         "Content-Type": "application/json"
-      },
+      `},
       body: JSON.stringify({
-        inputs: 
+        `inputs: 
         المستخدم يريد خطة تعلم:
         - الموضوع: ${answers.topic}
         - المستوى: ${answers.level}
         - الطريقة المفضلة: ${answers.style}
         - الوقت المتاح أسبوعياً: ${answers.time} ساعة
         أنشئ له خطة تعليمية منظمة مع مصادر مناسبة.
-        
+        `
       })
     });
 
@@ -34,3 +34,4 @@ async function generatePlan(answers) {
     return { plan: "❌ حصل خطأ أثناء توليد الخطة." };
   }
 }
+
