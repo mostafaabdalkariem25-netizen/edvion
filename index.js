@@ -1,40 +1,64 @@
+// index.js
+
+function $(selector) { return document.querySelector(selector); }
+function $all(selector) { return document.querySelectorAll(selector); }
+
 const questions = [
-  { key: "topic", label: "🧑‍💻 ماذا تريد أن تتعلم؟" },
-  { key: "level", label: "📊 ما هو مستواك الحالي؟" },
-  { key: "style", label: "📚 تفضل التعلم كيف؟" },
-  { key: "time", label: "⏳ كم ساعة تستطيع أن تتعلم أسبوعياً؟" }
+  {
+    key: "topic",
+    label: "🧑‍💻 ماذا تريد أن تتعلم؟",
+    options: ["HTML", "CSS", "JavaScript", "Python", "AI", "Other"]
+  },
+  {
+    key: "level",
+    label: "📊 ما هو مستواك الحالي؟",
+    options: ["Beginner", "Intermediate", "Advanced"]
+  },
+  {
+    key: "style",
+    label: "📚 تفضل التعلم كيف؟",
+    options: ["نظري", "عملي", "فيديوهات", "مقالات"]
+  },
+  {
+    key: "time",
+    label: "⏳ كم ساعة تستطيع أن تتعلم أسبوعياً؟",
+    options: ["1-3", "4-6", "7-10", "10+"]
+  }
 ];
 
 let step = 0;
 let answers = {};
 
-// عرض السؤال الحالي
 function showQuestion() {
-  const app = $("#app");
   const question = questions[step];
+  let html = `<h2>${question.label}</h2><div class="options">`;
 
-  app.innerHTML = ` 
-    <div class="box">
-      <h2>${question.label}</h2>
-      <input id="answer" type="text" class="input"/>
-      <button id="next" class="btn">
-        ${step === questions.length - 1 ? "إنشاء الخطة" : "التالي"}
-      </button>
-    </div>`
-  ; // ← دي لازم تقفل بـ backtick مش بعلامة تنصيص
+  question.options.forEach(opt => {
+    html += `
+      <label class="option">
+        <input type="radio" name="answer" value="${opt}"/>
+        ${opt}
+      </label>
+    `;
+  });
+
+  html += `</div>
+    <button id="next">${step === questions.length - 1 ? "إنشاء الخطة" : "التالي"}</button>
+  `;
+
+  $("#app").innerHTML = `<div class="question-box">${html}</div>`;
 
   $("#next").onclick = nextStep;
 }
 
-// الانتقال للخطوة التالية أو توليد الخطة
 async function nextStep() {
-  const input = $("#answer").value.trim();
-  if (!input) {
-    alert("رجاءً أجب على السؤال");
+  const selected = document.querySelector('input[name="answer"]:checked');
+  if (!selected) {
+    alert("يرجى اختيار إجابة قبل المتابعة");
     return;
   }
 
-  answers[questions[step].key] = input;
+  answers[questions[step].key] = selected.value;
 
   if (step < questions.length - 1) {
     step++;
@@ -43,10 +67,10 @@ async function nextStep() {
     $("#app").innerHTML = "<p>⏳ جاري إنشاء الخطة...</p>";
     try {
       const plan = await generatePlan(answers);
-      $("#app").innerHTML = ` 
+      $("#app").innerHTML = `
         <h2>📅 خطة التعلم الخاصة بك</h2>
-        <pre>${JSON.stringify(plan, null, 2)}</pre>
-      ` ;
+        <pre>${plan.plan}</pre>
+      `;
     } catch (err) {
       console.error(err);
       $("#app").innerHTML = "<p>❌ حدث خطأ أثناء توليد الخطة</p>";
@@ -54,12 +78,5 @@ async function nextStep() {
   }
 }
 
-// بدء التشغيل
+// بدء التنفيذ
 showQuestion();
-
-
-
-
-
-
-
