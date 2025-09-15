@@ -12,7 +12,7 @@ async function generatePlan(answers) {
         "Content-Type": "application/json"
       `},
       body: JSON.stringify({
-        `inputs: 
+        inputs:` 
         المستخدم يريد خطة تعلم:
         - الموضوع: ${answers.topic}
         - المستوى: ${answers.level}
