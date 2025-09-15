@@ -45,9 +45,9 @@ async function nextStep() {
     try {
       const plan = await generatePlan(answers);
       $("#app").innerHTML = 
-        <h2>📅 خطة التعلم الخاصة بك</h2>
+       ` <h2>📅 خطة التعلم الخاصة بك</h2>
         <pre>${JSON.stringify(plan, null, 2)}</pre>
-      ;
+      `;
     } catch (err) {
       console.error(err);
       $("#app").innerHTML = "<p>❌ حدث خطأ أثناء توليد الخطة</p>";
@@ -57,5 +57,6 @@ async function nextStep() {
 
 // بدء التشغيل
 showQuestion();
+
 
 
