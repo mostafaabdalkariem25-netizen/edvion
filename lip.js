@@ -1,11 +1,11 @@
 // lib.js
 
-// اختصار سريع للـ querySelector
+// دالة لاختيار عنصر واحد
 function $(selector) {
   return document.querySelector(selector);
 }
 
-// اختيار أكثر من عنصر
+// دالة لاختيار جميع العناصر المطابقة
 function $all(selector) {
   return document.querySelectorAll(selector);
 }
