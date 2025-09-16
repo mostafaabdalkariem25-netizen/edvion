@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edvion - AI Learning Plan</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    #app {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .question-box, .plan-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      color: #764ba2;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      background: #f5f5f5;
+      padding: 12px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    .option:hover {
+      background: #667eea;
+      color: #fff;
+    }
+
+    button {
+      background: #764ba2;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #667eea;
+    }
+
+    button:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #667eea;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .plan-content {
+      text-align: right;
+      line-height: 1.6;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .plan-content h3 {
+      color: #764ba2;
+      margin-bottom: 10px;
+    }
+
+    .plan-content ul {
+      text-align: right;
+      padding-right: 20px;
+      margin-bottom: 15px;
+    }
+
+    .plan-content li {
+      margin-bottom: 8px;
+    }
+
+    .error-message {
+      color: #e74c3c;
+      background: #ffeaea;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .success-message {
+      color: #27ae60;
+      background: #eaffea;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .restart-btn {
+      background: #27ae60;
+      margin-top: 20px;
+    }
+
+    .restart-btn:hover {
+      background: #219653;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Edvion - مخطّط التعلّم الذكي</h1>
+    <div class="question-box">
+      <h2>🧑‍💻 ماذا تريد أن تتعلم؟</h2>
+      <div class="progress-bar">
+        <div class="progress" style="width: 25%"></div>
+      </div>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="answer" value="HTML"/>
+          HTML
+        </label>
+        <label class="option">
+          <input type="radio" name="answer" value="CSS"/>
+          CSS
+        </label>
+        <label class="option">
+          <input type="radio" name="answer" value="JavaScript"/>
+          JavaScript
+        </label>
+        <label class="option">
+          <input type="radio" name="answer" value="Python"/>
+          Python
+        </label>
+        <label class="option">
+          <input type="radio" name="answer" value="AI"/>
+          الذكاء الاصطناعي
+        </label>
+      </div>
+      <button id="next">التالي</button>
+    </div>
+  </div>
+
+  <script>
+    // بيانات الأسئلة
+    const questions = [
+      {
+        key: "topic",
+        label: "🧑‍💻 ماذا تريد أن تتعلم؟",
+        options: ["HTML", "CSS", "JavaScript", "Python", "AI"]
+      },
+      {
+        key: "level",
+        label: "📊 ما هو مستواك الحالي؟",
+        options: ["مبتدئ", "متوسط", "متقدم"]
+      },
+      {
+        key: "style",
+        label: "📚 تفضل التعلم كيف؟",
+        options: ["نظري", "عملي", "فيديوهات", "مقالات"]
+      },
+      {
+        key: "time",
+        label: "⏳ كم ساعة تستطيع أن تتعلم أسبوعياً؟",
+        options: ["1-3", "4-6", "7-10", "10+"]
+      }
+    ];
+
+    // بيانات خطط التعلم
+    const learningPlans = {
+      HTML: {
+        مبتدئ: {
+          نظري: "خطة HTML للمبتدئين (نظري):\n\n1. أساسيات HTML - 3 ساعات\n2. العناصر الأساسية - 4 ساعات\n3. النماذج والجداول - 5 ساعات\n\nالمصادر:\n- كتاب 'تعلم HTML في 7 أيام'\n- موقع w3schools",
+          عملي: "خطة HTML للمبتدئين (عملي):\n\n1. بناء صفحة ويب بسيطة - 4 ساعات\n2. إنشاء نموذج اتصال - 3 ساعات\n3. مشروع نهائي - 5 ساعات\n\nالمصادر:\n- مشاريع عملية على CodePen\n- tutorialspoint"
+        },
+        متوسط: {
+          نظري: "خطة HTML للمتوسطين (نظري):\n\n1. HTML5 الجديد - 4 ساعات\n2. إمكانية الوصول - 3 ساعات\n3. SEO أساسيات - 5 ساعات\n\nالمصادر:\n- دورة HTML5 على Udemy\n- MDN Web Docs"
+        }
+      },
+      JavaScript: {
+        مبتدئ: {
+          نظري: "خطة JavaScript للمبتدئين (نظري):\n\n1. أساسيات الجافاسكريبت - 5 ساعات\n2. الكائنات والمصفوفات - 4 ساعات\n3. الدوال وأساسياتها - 6 ساعات\n\nالمصادر:\n- كتاب 'Eloquent JavaScript'\n- javascript.info"
+        }
+      }
+    };
+
+    let step = 0;
+    let answers = {};
+
+    function $(selector) {
+      return document.querySelector(selector);
+    }
+
+    function showQuestion() {
+      const question = questions[step];
+      const progressPercent = ((step + 1) / questions.length) * 100;
+      
+      let html = `
+        <h2>${question.label}</h2>
+        <div class="progress-bar">
+          <div class="progress" style="width: ${progressPercent}%"></div>
+        </div>
+        <div class="options">
+      `;
+
+      question.options.forEach(opt => {
+        html += `
+          <label class="option">
+            <input type="radio" name="answer" value="${opt}"/>
+            ${opt}
+          </label>
+        `;
+      });
+
+      html += `</div>
+        <button id="next">${step === questions.length - 1 ? "إنشاء الخطة" : "التالي"}</button>
+      `;
+
+      $("#app").innerHTML = `
+        <h1>Edvion - مخطّط التعلّم الذكي</h1>
+        <div class="question-box">${html}</div>
+      `;
+
+      $("#next").onclick = nextStep;
+      $("#next").disabled = true;
+      
+      // تعطيل الزر حتى يتم اختيار إجابة
+      const radioButtons = document.querySelectorAll('input[name="answer"]');
+      radioButtons.forEach(radio => {
+        radio.addEventListener('change', () => {
+          $("#next").disabled = false;
+        });
+      });
+    }
+
+    function nextStep() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      if (!selected) {
+        alert("يرجى اختيار إجابة قبل المتابعة");
+        return;
+      }
+
+      answers[questions[step].key] = selected.value;
+
+      if (step < questions.length - 1) {
+        step++;
+        showQuestion();
+      } else {
+        generatePlan();
+      }
+    }
+
+    function generatePlan() {
+      $("#app").innerHTML = `
+        <h1>Edvion - مخطّط التعلّم الذكي</h1>
+        <div class="question-box">
+          <h2>⏳ جاري إنشاء الخطة...</h2>
+          <div class="progress-bar">
+            <div class="progress" style="width: 100%"></div>
+          </div>
+        </div>
+      `;
+
+      // محاكاة انتظار لإنشاء الخطة
+      setTimeout(() => {
+        const { topic, level, style, time } = answers;
+        
+        // محاكاة إنشاء خطة تعلم (بدون استخدام API)
+        let planContent = `
+          <div class="plan-content">
+            <h2>📅 خطة التعلم الخاصة بك</h2>
+            <h3>الموضوع: ${topic}</h3>
+            <h3>المستوى: ${level}</h3>
+            <h3>أسلوب التعلم: ${style}</h3>
+            <h3>الوقت المتاح: ${time} ساعة أسبوعياً</h3>
+            
+            <h3>الخطة المقترحة:</h3>
+            <ul>
+              <li>الأسبوع 1: أساسيات ${topic} - 4 ساعات</li>
+              <li>الأسبوع 2: مفاهيم متقدمة في ${topic} - 5 ساعات</li>
+              <li>الأسبوع 3: تطبيقات عملية - 6 ساعات</li>
+              <li>الأسبوع 4: مشروع نهائي - 8 ساعات</li>
+            </ul>
+            
+            <h3>المصادر المقترحة:</h3>
+            <ul>
+              <li>دورة كاملة على YouTube</li>
+              <li>مقالات على MDN Web Docs</li>
+              <li>تمارين على freeCodeCamp</li>
+              <li>كتب إلكترونية مجانية</li>
+            </ul>
+            
+            <p>نصيحة: حاول تخصيص ${time} ساعة أسبوعياً للتعلم والممارسة لتحقيق أفضل النتائج.</p>
+          </div>
+          <button class="restart-btn" onclick="location.reload()">إنشاء خطة جديدة</button>
+        `;
+
+        $("#app").innerHTML = `
+          <h1>Edvion - مخطّط التعلّم الذكي</h1>
+          <div class="plan-box">
+            ${planContent}
+          </div>
+        `;
+      }, 2000);
+    }
+
+    // بدء التطبيق
+    showQuestion();
+  </script>
+</body>
+</html>
