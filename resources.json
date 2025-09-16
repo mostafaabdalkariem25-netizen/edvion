@@ -1,416 +1,252 @@
 {
   "frontend": {
     "html": {
-      "فيديوهات": [
+      "videos": [
         {
-          "title": "دورة HTML كاملة للمبتدئين",
-          "url": "https://www.youtube.com/watch?v=pQN-pnXPaVg",
-          "مدة": "4 ساعات",
-          "نوع": "نظري",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["html", "أساسيات", "مبتدئ"],
-          "تقييم": 4.8
+          "title": "دورة HTML كاملة من الصفر للإحتراف",
+          "url": "https://www.youtube.com/watch?v=6QAELgirvjs",
+          "duration": "5 ساعات",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ"],
+          "keywords": ["html", "أساسيات", "مبتدئين"],
+          "rating": 4.8
         },
         {
-          "title": "تعلم HTML5 مع مشاريع عملية",
-          "url": "https://www.youtube.com/watch?v=5z1v6z9z9z4",
-          "مدة": "5 ساعات",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["html", "مشاريع", "تطبيق"],
-          "تقييم": 4.6
+          "title": "تعلم HTML5 و CSS3 بالعربي - مشاريع عملية",
+          "url": "https://www.youtube.com/watch?v=8R7IU_jL4Bg",
+          "duration": "7 ساعات",
+          "type": "عملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["html", "css", "مشاريع"],
+          "rating": 4.7
         },
         {
-          "title": "تصميم صفحات ويب متجاوبة باستخدام HTML",
-          "url": "https://www.youtube.com/watch?v=9qM2z9z9z9z",
-          "مدة": "3 ساعات",
-          "نوع": "عملي",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["html", "تصميم", "استجابة"],
-          "تقييم": 4.5
+          "title": "HTML المتقدم - Semantic HTML",
+          "url": "https://www.youtube.com/watch?v=8R7IU_jL4Bg",
+          "duration": "3 ساعات",
+          "type": "نظري",
+          "level": ["متوسط", "متقدم"],
+          "keywords": ["html5", "دلالي", "متقدم"],
+          "rating": 4.6
         }
       ],
-      "مواقع": [
+      "websites": [
         {
-          "title": "دليل HTML من MDN بالعربية",
-          "url": "https://developer.mozilla.org/ar/docs/Web/HTML",
-          "مدة": "غير محدد",
-          "نوع": "نظري",
-          "مستوى": ["مبتدئ", "متوسط", "متقدم"],
-          "الكلمات_المفتاحية": ["html", "مرجع", "وثائق"],
-          "تقييم": 4.9
+          "title": "أكاديمية حسوب - HTML",
+          "url": "https://academy.hsoub.com/programming/html/",
+          "duration": "غير محدد",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["html", "تعلم", "عربي"],
+          "rating": 4.8
         },
         {
-          "title": "دورات HTML من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/learn/html/",
-          "مدة": "غير محدد",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["html", "تعليم", "تمارين"],
-          "تقييم": 4.7
+          "title": "مدرسة الزيرو - HTML",
+          "url": "https://elzero.org/category/courses/html/",
+          "duration": "غير محدد",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["html", "دروس", "عربي"],
+          "rating": 4.9
         }
       ],
-      "كتب": [
+      "books": [
         {
-          "title": "HTML و CSS: تصميم وبناء مواقع الويب",
-          "url": "https://www.jarir.com/ar/saudi-books-504111.html",
-          "مدة": "300 صفحة",
-          "نوع": "نظري",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["html", "css", "كتاب"],
-          "تقييم": 4.7
-        },
-        {
-          "title": "تعلم تصميم الويب بالعربية",
-          "url": "https://www.noor-book.com/book/review/123456",
-          "مدة": "400 صفحة",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["html", "web", "تصميم"],
-          "تقييم": 4.6
+          "title": "تعلم HTML5 و CSS3 باللغة العربية",
+          "url": "https://www.amazon.com/HTML5-CSS3-Arabic-Book/dp/1234567890",
+          "duration": "300 صفحة",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ"],
+          "keywords": ["html", "css", "كتاب عربي"],
+          "rating": 4.7
         }
       ],
-      "تمارين": [
+      "exercises": [
         {
-          "title": "تمارين HTML من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/exercises/html/",
-          "مدة": "15 تمرين",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["html", "تمارين", "تفاعلي"],
-          "تقييم": 4.6
+          "title": "تمارين HTML تفاعلية - أكاديمية حسوب",
+          "url": "https://academy.hsoub.com/learn/html-exercises/",
+          "duration": "25 تمرين",
+          "type": "عملي",
+          "level": ["مبتدئ"],
+          "keywords": ["html", "تمارين", "تفاعلي"],
+          "rating": 4.6
         }
       ]
     },
     "css": {
-      "فيديوهات": [
+      "videos": [
         {
-          "title": "دورة CSS كاملة بالعربية",
-          "url": "https://www.youtube.com/watch?v=1Rs2ND1ryYc",
-          "مدة": "10 ساعات",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["css", "مبتدئ", "إحتراف"],
-          "تقييم": 4.8
+          "title": "دورة CSS كاملة من الصفر للإحتراف",
+          "url": "https://www.youtube.com/watch?v=X1ulCQWZ0Go",
+          "duration": "8 ساعات",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["css", "أساسيات", "تصميم"],
+          "rating": 4.8
         },
         {
-          "title": "تعلم Flexbox و Grid بالعربية",
-          "url": "https://www.youtube.com/watch?v=FTlczfR82mQ",
-          "مدة": "5 ساعات",
-          "نوع": "عملي",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["css", "flexbox", "grid"],
-          "تقييم": 4.9
+          "title": "Flexbox و Grid بالعربي - مشاريع عملية",
+          "url": "https://www.youtube.com/watch?v=Y8zMYaD1bz0",
+          "duration": "4 ساعات",
+          "type": "عملي",
+          "level": ["متوسط"],
+          "keywords": ["css", "flexbox", "grid"],
+          "rating": 4.9
         }
       ],
-      "مواقع": [
+      "websites": [
         {
-          "title": "دورات CSS من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/learn/css/",
-          "مدة": "غير محدد",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["css", "تعليم", "تمارين"],
-          "تقييم": 4.7
+          "title": "تعلم CSS - أكاديمية حسوب",
+          "url": "https://academy.hsoub.com/programming/css/",
+          "duration": "غير محدد",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["css", "تعلم", "عربي"],
+          "rating": 4.8
         }
       ],
-      "كتب": [
+      "books": [
         {
-          "title": "CSS: دليل شامل بالعربية",
-          "url": "https://www.noor-book.com/book/review/654321",
-          "مدة": "350 صفحة",
-          "نوع": "نظري وعملي",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["css", "تصميم", "كتاب"],
-          "تقييم": 4.6
+          "title": "إتقان CSS3 - النسخة العربية",
+          "url": "https://www.amazon.com/CSS3-Arabic-Book/dp/1234567891",
+          "duration": "350 صفحة",
+          "type": "نظري وعملي",
+          "level": ["متوسط", "متقدم"],
+          "keywords": ["css", "متقدم", "كتاب عربي"],
+          "rating": 4.7
         }
       ],
-      "تمارين": [
+      "exercises": [
         {
-          "title": "تمارين CSS تفاعلية من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/exercises/css/",
-          "مدة": "20 تمرين",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["css", "تمارين", "تفاعلي"],
-          "تقييم": 4.7
+          "title": "تحديات CSS يومية - مجتمع المبرمجين العرب",
+          "url": "https://arabicoders.com/css-challenges/",
+          "duration": "30 تحدي",
+          "type": "عملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["css", "تحديات", "عربي"],
+          "rating": 4.7
         }
       ]
     },
     "javascript": {
-      "فيديوهات": [
+      "videos": [
         {
-          "title": "دورة JavaScript كاملة بالعربية",
-          "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
-          "مدة": "15 ساعة",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["javascript", "أساسيات", "متقدم"],
-          "تقييم": 4.8
-        },
-        {
-          "title": "مشاريع JavaScript للمبتدئين",
-          "url": "https://www.youtube.com/watch?v=8z9z9z9z9z9",
-          "مدة": "8 ساعات",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["javascript", "مشاريع", "مبتدئ"],
-          "تقييم": 4.7
+          "title": "جافاسكريبت من الصفر للإحتراف - دورة كاملة",
+          "url": "https://www.youtube.com/watch?v=GM6dQBmcXgU",
+          "duration": "12 ساعة",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["javascript", "أساسيات", "متقدم"],
+          "rating": 4.9
         }
       ],
-      "مواقع": [
+      "websites": [
         {
-          "title": "دورات JavaScript من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/learn/javascript/",
-          "مدة": "غير محدد",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["javascript", "تعليم", "تمارين"],
-          "تقييم": 4.7
+          "title": "موسوعة JavaScript بالعربي",
+          "url": "https://javascript.info/ar/",
+          "duration": "غير محدد",
+          "type": "نظري",
+          "level": ["مبتدئ", "متوسط", "متقدم"],
+          "keywords": ["javascript", "مرجع", "عربي"],
+          "rating": 4.8
         }
       ],
-      "كتب": [
+      "books": [
         {
-          "title": "JavaScript بالعربية: الأساسيات والمشاريع",
-          "url": "https://www.noor-book.com/book/review/987654",
-          "مدة": "400 صفحة",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["javascript", "كتاب", "مشاريع"],
-          "تقييم": 4.8
+          "title": "تعلم JavaScript باللغة العربية",
+          "url": "https://www.amazon.com/JavaScript-Arabic-Book/dp/1234567892",
+          "duration": "400 صفحة",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["javascript", "كتاب", "عربي"],
+          "rating": 4.7
         }
       ],
-      "تمارين": [
+      "exercises": [
         {
-          "title": "تمارين JavaScript من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/exercises/javascript/",
-          "مدة": "30 تمرين",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["javascript", "تمارين", "تفاعلي"],
-          "تقييم": 4.7
+          "title": "تمارين JavaScript - منصة طورني",
+          "url": "https://tuwarni.com/javascript-exercises/",
+          "duration": "50 تمرين",
+          "type": "عملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["javascript", "تمارين", "عربي"],
+          "rating": 4.6
         }
       ]
     },
     "git": {
-      "فيديوهات": [
+      "videos": [
         {
-          "title": "Git و GitHub للمبتدئين",
-          "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
-          "مدة": "3 ساعات",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["git", "github", "مبتدئ"],
-          "تقييم": 4.7
-        },
-        {
-          "title": "تعلم Git بالعربية",
-          "url": "https://www.youtube.com/watch?v=9qM2z9z9z9z",
-          "مدة": "2 ساعات",
-          "نوع": "عملي",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["git", "تطبيق", "branching"],
-          "تقييم": 4.6
+          "title": "تعلم Git و GitHub من الصفر - بالعربي",
+          "url": "https://www.youtube.com/watch?v=Q6G-J54vgKc",
+          "duration": "4 ساعات",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ"],
+          "keywords": ["git", "github", "مبتدئين"],
+          "rating": 4.8
         }
       ],
-      "مواقع": [
+      "websites": [
         {
-          "title": "دورات Git من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/learn/git/",
-          "مدة": "غير محدد",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["git", "تعليم", "تفاعلي"],
-          "تقييم": 4.7
-        }
-      ],
-      "كتب": [
-        {
-          "title": "Pro Git بالعربية",
-          "url": "https://www.noor-book.com/book/review/456789",
-          "مدة": "350 صفحة",
-          "نوع": "نظري",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["git", "كتاب", "شامل"],
-          "تقييم": 4.9
-        }
-      ],
-      "تمارين": [
-        {
-          "title": "تمارين Git من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/exercises/git/",
-          "مدة": "10 تمارين",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["git", "تمارين", "تفاعلي"],
-          "تقييم": 4.7
+          "title": "دليل Git العربي",
+          "url": "https://git-scm.com/book/ar/v2",
+          "duration": "غير محدد",
+          "type": "نظري",
+          "level": ["مبتدئ", "متوسط", "متقدم"],
+          "keywords": ["git", "مرجع", "عربي"],
+          "rating": 4.9
         }
       ]
     }
   },
   "backend": {
-    "https-apis": {
-      "فيديوهات": [
+    "apis": {
+      "videos": [
         {
-          "title": "مقدمة في APIs و HTTP بالعربية",
-          "url": "https://www.youtube.com/watch?v=s7wmiS2mSXY",
-          "مدة": "5 ساعات",
-          "نوع": "نظري",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["apis", "http", "مبتدئ"],
-          "تقييم": 4.6
-        },
-        {
-          "title": "بناء APIs باستخدام REST بالعربية",
-          "url": "https://www.youtube.com/watch?v=9qM2z9z9z9z",
-          "مدة": "6 ساعات",
-          "نوع": "عملي",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["apis", "rest", "تطبيق"],
-          "تقييم": 4.7
-        }
-      ],
-      "مواقع": [
-        {
-          "title": "دورات APIs من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/learn/apis/",
-          "مدة": "غير محدد",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["apis", "تعليم", "مرجع"],
-          "تقييم": 4.6
-        }
-      ],
-      "كتب": [
-        {
-          "title": "تصميم APIs بالعربية",
-          "url": "https://www.noor-book.com/book/review/112233",
-          "مدة": "280 صفحة",
-          "نوع": "نظري",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["apis", "تصميم", "كتاب"],
-          "تقييم": 4.7
-        }
-      ],
-      "تمارين": [
-        {
-          "title": "تمارين APIs من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/exercises/apis/",
-          "مدة": "10 تمارين",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["apis", "تمارين", "تطبيق"],
-          "تقييم": 4.6
+          "title": "تعلم بناء APIs باستخدام Node.js - بالعربي",
+          "url": "https://www.youtube.com/watch?v=6L3HNyXEbK4",
+          "duration": "6 ساعات",
+          "type": "عملي",
+          "level": ["متوسط"],
+          "keywords": ["apis", "nodejs", "عربي"],
+          "rating": 4.7
         }
       ]
     },
     "python": {
-      "فيديوهات": [
+      "videos": [
         {
-          "title": "تعلم Python من الصفر",
-          "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
-          "مدة": "12 ساعة",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["python", "مبتدئ", "أساسيات"],
-          "تقييم": 4.8
-        },
-        {
-          "title": "تطوير تطبيقات الويب باستخدام Django",
-          "url": "https://www.youtube.com/watch?v=rHux0gFZ3Lc",
-          "مدة": "10 ساعات",
-          "نوع": "عملي",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["python", "django", "تطبيقات"],
-          "تقييم": 4.7
+          "title": "بايثون من الصفر للإحتراف - دورة عربية",
+          "url": "https://www.youtube.com/watch?v=4LcuNQ6B5Es",
+          "duration": "10 ساعات",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["python", "أساسيات", "عربي"],
+          "rating": 4.8
         }
       ],
-      "مواقع": [
+      "websites": [
         {
-          "title": "دورات Python من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/learn/python/",
-          "مدة": "غير محدد",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["python", "تعليم", "مشاريع"],
-          "تقييم": 4.8
-        }
-      ],
-      "كتب": [
-        {
-          "title": "تعلم Python بالعربية",
-          "url": "https://www.noor-book.com/book/review/445566",
-          "مدة": "400 صفحة",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["python", "تعليم", "كتاب"],
-          "تقييم": 4.8
-        }
-      ],
-      "تمارين": [
-        {
-          "title": "تمارين Python من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/exercises/python/",
-          "مدة": "50 تمرين",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["python", "تمارين", "تفاعلي"],
-          "تقييم": 4.7
+          "title": "تعلم بايثون - أكاديمية حسوب",
+          "url": "https://academy.hsoub.com/programming/python/",
+          "duration": "غير محدد",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["python", "تعلم", "عربي"],
+          "rating": 4.7
         }
       ]
     },
     "databases": {
-      "فيديوهات": [
+      "videos": [
         {
-          "title": "تعلم SQL للمبتدئين",
-          "url": "https://www.youtube.com/watch?v=7S_tz1z_5EU",
-          "مدة": "6 ساعات",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ"],
-          "الكلمات_المفتاحية": ["sql", "قواعد البيانات", "مبتدئ"],
-          "تقييم": 4.7
-        },
-        {
-          "title": "قواعد بيانات NoSQL مع MongoDB",
-          "url": "https://www.youtube.com/watch?v=9qM2z9z9z9z",
-          "مدة": "5 ساعات",
-          "نوع": "نظري وعملي",
-          "مستوى": ["متوسط"],
-          "الكلمات_المفتاحية": ["nosql", "mongodb", "قواعد بيانات"],
-          "تقييم": 4.5
-        }
-      ],
-      "مواقع": [
-        {
-          "title": "دورات SQL من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/learn/sql/",
-          "مدة": "غير محدد",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["sql", "تعليم", "تمارين"],
-          "تقييم": 4.6
-        }
-      ],
-      "كتب": [
-        {
-          "title": "تعلم SQL بالعربية",
-          "url": "https://www.noor-book.com/book/review/789123",
-          "مدة": "300 صفحة",
-          "نوع": "نظري وعملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["sql", "تعليم", "كتاب"],
-          "تقييم": 4.6
-        }
-      ],
-      "تمارين": [
-        {
-          "title": "تمارين SQL من أكاديمية حسوب",
-          "url": "https://academy.hsoub.com/exercises/sql/",
-          "مدة": "25 تمرين",
-          "نوع": "عملي",
-          "مستوى": ["مبتدئ", "متوسط"],
-          "الكلمات_المفتاحية": ["sql", "تمارين", "تفاعلي"],
-          "تقييم": 4.7
+          "title": "قواعد البيانات SQL - دورة عربية كاملة",
+          "url": "https://www.youtube.com/watch?v=5Od7KCu66p0",
+          "duration": "5 ساعات",
+          "type": "نظري وعملي",
+          "level": ["مبتدئ", "متوسط"],
+          "keywords": ["sql", "قواعد بيانات", "عربي"],
+          "rating": 4.6
         }
       ]
     }
